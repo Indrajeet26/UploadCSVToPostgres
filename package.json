@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Indrajeet26/UploadCSVToPostgres#readme",
   "dependencies": {
-    "pg": "^7.8.0"
+    "csvtojson": "^2.0.8",
+    "pg": "^7.8.0",
+    "request": "^2.88.0"
   }
 }
