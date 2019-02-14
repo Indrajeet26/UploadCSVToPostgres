@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Indrajeet26/UploadCSVToPostgres/issues"
   },
-  "homepage": "https://github.com/Indrajeet26/UploadCSVToPostgres#readme"
+  "homepage": "https://github.com/Indrajeet26/UploadCSVToPostgres#readme",
+  "dependencies": {
+    "pg": "^7.8.0"
+  }
 }
