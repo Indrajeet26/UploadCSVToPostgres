@@ -47,11 +47,12 @@ const executeQueryBatch = queriesBatchTemp =>{
     ).catch(err=>{
         console.error(`There is error while executing the query ${err}`)
     })
-}
+};
+
 csv().fromStream(request.get(url))
 .subscribe((orderRedcord)=>{
    populateOrderData(pgPool, orderRedcord);
 })
 .on("done",()=>{
-//some logic after done event
+ executeQueryBatch(queriesBatch);
 })
