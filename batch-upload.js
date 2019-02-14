@@ -49,10 +49,14 @@ const executeQueryBatch = queriesBatchTemp =>{
     })
 };
 
+const batchJob =()=>{
 csv().fromStream(request.get(url))
 .subscribe((orderRedcord)=>{
    populateOrderData(pgPool, orderRedcord);
 })
 .on("done",()=>{
  executeQueryBatch(queriesBatch);
-})
+});
+}
+
+module.exports = {batchJob};
