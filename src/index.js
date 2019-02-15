@@ -5,7 +5,7 @@ const csv= require('csvtojson');
 
 const config={
     user:"postgres",
-    databse:"postgres",
+    database:"postgres",
     host:"localhost",
     password:"putyoursbpassword",
     port:5432
