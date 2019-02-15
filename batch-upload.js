@@ -3,10 +3,9 @@ const request= require('request');
 const csv= require('csvtojson');
 const format=require('pg-format');
 
-let batchSize;
 const DEFAULT_MAX_BATCH_SIZE =1000;
 
-const url = "https://s3-ap-southeast-2.amazonaws.com/testcsvindra/orderData.csv";
+
 
 const QUERY_PREFIX = "INSERT INTO public.order (orderid, customerid, item, quantity) SELECT i.orderid,i.customerid, i.item, i.quantity FROM(" +
 " VALUES %L ) AS i (orderid, customerid, item, quantity)" + 
@@ -35,13 +34,12 @@ const _executeBatch = dbService => (queries = []) => {
 }
 
 
-const batchJob =(dbService
-    )=>{
+const batchJob =(converter,dbService)=>{
     let queries;
   const batchSize = inputBatchSize || DEFAULT_MAX_BATCH_SIZE;
     const executeBatch = _executeBatch(dbService);
     const insertRecord = _insertRecord([],executeBatch,batchSize);
-csv().fromStream(request.get(url))
+    converter
 .subscribe(async orderRedcord=>{
 queries = await insertRecord(orderRedcord);
 })
