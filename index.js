@@ -9,5 +9,7 @@ const config={
     port:5432
 }
 
+const batchSize = 1000;
+
 const dbService = new pg.Pool(config);
-batchJob(dbService);
+batchJob(dbService,batchSize);

@@ -4,7 +4,8 @@
   "description": "Batch upload to postgres from csv",
   "main": "index.js",
   "scripts": {
-    "test": "mocha *.test.js"
+    "test": "mocha *.test.js",
+    "lint": "eslint *.js"
   },
   "repository": {
     "type": "git",
