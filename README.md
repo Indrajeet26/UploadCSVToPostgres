@@ -1,16 +1,16 @@
 # UploadCSVToPostgres
 
-OVERVIEW:
+# OVERVIEW:
 
 It is a simple batch job that retrieves a CSV file from a URL, which imports orders into a
 database(Postgres). Ensuring that the customer exists in
 the database before importing the order, otherwise skip the import for the order.
 
-ASSUMPTION:
+# ASSUMPTION:
 
 There is an existing collection/table of customers and orders.
 
-EXAMPLE:
+# EXAMPLE:
 
 CSV header with a sample input (1 order per line)
 orderId,customerId,item,quantity
@@ -28,7 +28,7 @@ customerId (String)
 item (String)
 quantity (Number)
 
-COMMAND:
+# COMMAND:
 
 To run batch job (Read CSV file from url and importing data into postgres if customer exists in Customers table)
 
